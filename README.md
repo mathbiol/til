@@ -1,4 +1,4 @@
-# til
+# TIL
 Spatial Organization and Molecular Correlation of Tumor-Infiltrating Lymphocytes
 
 The core library is kept here, the interactive literate programming
