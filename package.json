@@ -1,0 +1,26 @@
+{
+  "name": "til",
+  "version": "1.0.0",
+  "description": "Tumor-Infiltrating Lymphocytes",
+  "main": "til.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathbiol/til.git"
+  },
+  "keywords": [
+    "tcga",
+    "genomic",
+    "data",
+    "commons",
+    "featurescape"
+  ],
+  "author": "Jonas Almeida <jalmeida@mathbiol.org> (http://jonasalmeida.info)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathbiol/til/issues"
+  },
+  "homepage": "https://github.com/mathbiol/til#readme"
+}
