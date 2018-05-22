@@ -32,6 +32,15 @@ til.tsv2tab = function(tsv){
     return tab
 }
 
+if(typeof(exports)!="undefined"){
+    exports.til=til
+    exports.hello=function(){
+        return 'hello world at'+Date()
+    }
+}
 
+if(typeof('define'!='undefined')){
+    define(til)
+}
 
 //til()

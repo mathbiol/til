@@ -1,6 +1,6 @@
 {
-  "name": "til",
-  "version": "1.0.0",
+  "name": "mathbiol-til",
+  "version": "0.0.2",
   "description": "Tumor-Infiltrating Lymphocytes",
   "main": "til.js",
   "scripts": {
