@@ -1,4 +1,8 @@
-console.log('til.js loaded :-)')
+//console.log('til.js loaded :-)');
+
+if(typeof(fetch)=="undefined"){ // if we're in node
+    fetch = require('node-fetch')
+}
 
 til=function(){
     // ini
@@ -11,7 +15,7 @@ til=function(){
 }
 
 til.loadTsv = async function(url){
-    url = url||'all_indices_ap.csv'
+    url = url||'https://mathbiol.github.io/til/all_indices_ap.csv'
     var p = (await fetch(url)).text()
     return p
 }
@@ -32,15 +36,16 @@ til.tsv2tab = function(tsv){
     return tab
 }
 
-if(typeof(exports)!="undefined"){
-    exports.til=til
-    exports.hello=function(){
-        return 'hello world at'+Date()
-    }
+
+//if(typeof(define)!=="undefined"){
+//    define({til:til})
+//}
+
+
+if(typeof(define)!=="undefined"){
+    define({
+        loadTsv:til.loadTsv,
+        tsv2tab:til.tsv2tab
+    })
 }
 
-if(typeof('define'!='undefined')){
-    define(til)
-}
-
-//til()
