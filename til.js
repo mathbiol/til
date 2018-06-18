@@ -8,7 +8,7 @@ til=function(){
     // ini
     console.log('til initialized at'+Date())
     til.loadTsv().then(function(tsv){
-        til.dt = til.dt||{}
+        //til.dt = til.dt||{}
         til.all_indices_ap = til.tsv2tab(tsv)
         console.log('done')
     })
@@ -32,6 +32,12 @@ til.tsv2tab = function(tsv){
         r.split(',').forEach(function(ri,i){
             tab[parms[i]].push(ri)
         })
+    })
+    // make sure numeric parameters are types as such
+    Object.keys(tab).forEach(parm=>{
+        if(!isNaN(parseFloat(tab[parm][0]))){
+            tab[parm]=tab[parm].map(x=>parseFloat(x))
+        }
     })
     return tab
 }
