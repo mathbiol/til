@@ -42,6 +42,21 @@ til.tsv2tab = function(tsv){
     return tab
 }
 
+til.unique=function(ar,pat){ //looks for all versions of pattern in array
+    pat=pat||'TCGA-([^-]+)'
+    pat=RegExp(pat)
+    var k={}
+    ar.forEach((a,i)=>{
+        var ka = a.match(pat)
+        if(ka){
+            ka=ka[1]
+            if(!k[ka]){k[ka]=[]} // initiatize counter if not ther already
+            k[ka].push(i)
+        }
+    })
+    return k
+}
+
 
 //if(typeof(define)!=="undefined"){
 //    define({til:til})
